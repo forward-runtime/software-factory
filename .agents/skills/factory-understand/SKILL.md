@@ -24,6 +24,18 @@ explaining the reasoning; accept equivalent wording, clarify gaps and retry thos
 Revealable learning examples are not a scored pass. Do not invent answers while the giver is
 offline or call a rehearsed quiz proof of an unbuilt change.
 
+**Until the checkpoint passes, the change does not move.** No teammate review, no pull request
+for others to read, no merge. Not passing is an ordinary outcome and not a judgement of the
+person: it means the explanation has not landed yet, which is the factory's problem to fix. Explain
+again differently and retry the questions that exposed the gap.
+
+A gap is also evidence about the work itself. If the giver cannot follow a choice, consider that
+the choice may be wrong, under-explained in the code, or resting on an assumption nobody agreed to
+— and route that back through `factory-plan` rather than explaining harder.
+
+Report the checkpoint as passed, failed and re-explained, or not yet attempted. Never report it as
+passed because questions were sent, an artifact was opened, or the giver did not object.
+
 Keep the feature spec current and update existing product reference docs where behavior or
 maintenance knowledge changed. Put decision history and results in the work record/PR; regenerate
 views rather than accumulating reports. Preserve a snapshot when a decision relies on it.

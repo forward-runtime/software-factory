@@ -12,8 +12,14 @@ Existing features or unrelated passing tests are not evidence for a new claim.
   that merely repeat implementation wording or assert no meaningful behavior.
 - For UI, exercise agreed behavior and applicable platforms, including failure states. Record
   actual screenshots/video when useful. Factory review artifacts themselves are desktop-only.
-- Request independent read-only agent review with [the review prompt](../../../prompts/reviewer.md).
-  Fix material findings; record unperformed checks/limitations without calling them passes.
+- Independent read-only agent review is required, not optional, through
+  [the review prompt](../../../prompts/reviewer.md). Reviewing your own work does not satisfy it:
+  the reviewer must be a separate session that did not write the change and does not share your
+  reasoning about it. Fix material findings; record unperformed checks and limitations without
+  calling them passes.
+  If no independent reviewer can be obtained, say so plainly and report the change as checked but
+  not independently reviewed. That is an honest, useful state. Self-review reported as review is
+  not.
 
 Classify failures: clear implementation defect → repair through `factory-deliver`;
 missing/conflicting intent → `factory-plan`; broken environment/tool or inconclusive check →
