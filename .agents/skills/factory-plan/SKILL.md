@@ -8,7 +8,8 @@ is unknown. The receiving factory owns getting aligned. Read previous answers an
 sources before asking; keep this project's domain knowledge out of the reusable core.
 
 Begin with `factory-visualize`: put the known actors, system boundary, flow or states on a
-small provisional map and use it to align. Keep assumptions visible in the relevant details;
+small provisional map and use it to align through the required
+[Lavish workflow](../../../docs/LAVISH.md). Keep assumptions visible in the relevant details;
 do not wait until a long prose specification has been written.
 
 ## Establish intent and stakes

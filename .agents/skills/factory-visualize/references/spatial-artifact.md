@@ -1,7 +1,10 @@
 # Spatial artifact recipe
 
-Prefer an existing team diagram tool when it supports the interaction the giver needs. Otherwise,
-use the self-contained SVG/HTML template. It needs Node.js to generate files and a desktop browser
+Use the self-contained SVG/HTML template as an authoring helper inside the required
+[Lavish workflow](../../../../docs/LAVISH.md). Existing team diagrams can be source material;
+the human-facing factory artifact is authored and reviewed through Lavish. Fetch current CLI
+guidance before generating HTML; without it, retain research/Markdown/model drafts and name
+the blocked visual step rather than invoking this helper as a fallback. It needs Node.js to generate files and a desktop browser
 to explore them; it fetches no scripts and requires no database, server API or account.
 
 Run from the canonical skill directory (resolve this location from the actual installed skill):
@@ -42,7 +45,13 @@ relationships, and embeds its hash in the HTML. This is a draft view of the refe
 only actual scoped owner feedback can change that spec. Keep detailed product evidence in its
 canonical home and link it from the relevant node rather than duplicate the whole corpus.
 
-Verify selection, drag, zoom, drill-down/back, reset, source links and keyboard navigation. Check
+Verify selection, drag, zoom, drill-down/back, reset, source links and keyboard navigation inside
+Lavish as well as directly. The sandbox may disable storage; layout persistence needs its own
+receipt and is not guaranteed by a standalone browser check. Check
 that changing layout does not change the embedded model or create an acceptance record. Rebuild
 both outputs after semantic edits. If an established visual tool handles comments or decisions,
 verify its actual delivery path; this offline template does not submit feedback anywhere.
+
+The template starts Lavish in Explore mode so dragging and selection remain interactions.
+The reviewer can switch the Lavish toolbar to Annotate; do not add a separate annotation UI
+or mistake this default for removal of Lavish feedback. Verify the toolbar in the actual shell.

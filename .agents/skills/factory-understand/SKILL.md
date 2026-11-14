@@ -8,7 +8,7 @@ understanding checkpoint and [artifact guidance](../../../docs/HTML-ARTIFACTS.md
 
 Start with `factory-visualize`: a clickable map of the actual change, its interfaces and one
 success/failure path. Keep supporting Markdown alongside the visual. Produce a desktop
-HTML/Lavish review at the depth the person's responsibility needs: background,
+review through the required [Lavish workflow](../../../docs/LAVISH.md) at the depth the person's responsibility needs: background,
 main idea, important choices, interactive diagram or worked scenario, relevant code links,
 evidence and limitations. Interaction must explain a real distinction, not decorate the page.
 Clearly distinguish implementation from a hypothetical or simulated example.

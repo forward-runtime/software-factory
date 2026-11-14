@@ -12,7 +12,8 @@
 - Keep artifacts clean: no decorative subtitles, eyebrow headings, obvious-control legends or
   metadata footnotes. Use the [clean artifact rule](HTML-ARTIFACTS.md#clean-artifacts).
 - Lead alignment and understanding with clickable system maps, flows or state diagrams through
-  `factory-visualize`; keep Markdown alongside them. Use desktop HTML/Lavish views. They do not replace the spec;
+  `factory-visualize`; keep Markdown alongside them. All human-facing artifacts use the
+  [Lavish workflow](LAVISH.md), loading the bundled `lavish` skill before authoring. They do not replace the spec;
   see [HTML-ARTIFACTS.md](HTML-ARTIFACTS.md). Keep handoffs/history in the work record or PR.
 
 Follow [document review](DOCUMENT-REVIEW.md) when creating or editing prose: retain canonical

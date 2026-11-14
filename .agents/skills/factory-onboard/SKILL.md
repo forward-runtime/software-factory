@@ -48,7 +48,7 @@ is the receiving factory's responsibility; the giver confirms or corrects its in
 
 Use `factory-visualize` to begin with a clickable map of the team, system boundaries and
 proposed workflow. Keep supporting Markdown alongside it. Produce one desktop HTML onboarding
-agreement, using Lavish when available. Show what was
+agreement through the required [Lavish workflow](../../../docs/LAVISH.md). Show what was
 learned, the proposed operating process, decision rights, rigor, evidence and unresolved choices.
 Include a preview of the resulting project profile and the files/components selected for installation.
 Bind actual feedback to the artifact version; an unsent choice or an opened page is not agreement.

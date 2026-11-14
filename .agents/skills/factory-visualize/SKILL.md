@@ -5,7 +5,8 @@ description: Lead alignment and understanding through clickable system maps, flo
 
 Use this skill for visual alignment, architecture exploration and understanding an actual change.
 Read local rules, the agreed profile and current spec/evidence. Start with a useful visual map;
-put supporting prose alongside it. Use the team's existing visual tool or desktop HTML/Lavish.
+put supporting prose alongside it. Load the bundled `lavish` skill and follow the required
+[Lavish workflow](../../../docs/LAVISH.md) for authoring, opening and receiving feedback.
 The receiving factory owns making the intended system understandable.
 
 ## Build a spatial model
@@ -45,7 +46,8 @@ boilerplate footers. Keep revision/hash data in metadata or the work record.
 ## Produce and verify
 
 Use [the spatial artifact recipe](references/spatial-artifact.md) for the included offline
-HTML/SVG template and renderer, or adapt the existing team tool. Read only that reference when
+HTML/SVG authoring helper and renderer. Present its output through Lavish; it is not an
+alternative review workflow. Read only that reference when
 using these assets. They generate review documents, not a new factory runtime or VR application.
 
 Exercise the meaningful interactions and check labels, edge directions, boundaries and hierarchy

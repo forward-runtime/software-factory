@@ -1,0 +1,8 @@
+{
+  "repository": "https://github.com/kunchenguid/lavish-axi",
+  "revision": "589681fe1e85f365c8f0747202f8d40fb606e13a",
+  "path": "skills/lavish/SKILL.md",
+  "license": "MIT",
+  "testedCliVersion": "0.1.97",
+  "cliNodeRequirement": ">=22"
+}
