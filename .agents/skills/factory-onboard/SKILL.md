@@ -42,6 +42,11 @@ environment; another session's connection is not proof of access here.
 
 Learn how roles, Conductor sections and delivery states relate; runtime state is separate.
 
+Agree which paths run unattended. People, agents and service events can all start work, and not all
+of it needs a person. Establish with the owner which inputs and change types may run end to end
+without a checkpoint — and what exceeds that envelope by stakes, blast radius or what it touches.
+Record it in the profile so the decision is theirs in advance rather than an agent's in the moment.
+
 Propose the observation loop as part of the process, not as an afterthought: what it watches, how
 often, what it may write, who it notifies and when it must stop and ask. See
 [factory-observe](../factory-observe/SKILL.md) for the conditions that warrant notifying the owner,

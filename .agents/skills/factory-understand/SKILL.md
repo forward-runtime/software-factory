@@ -24,8 +24,22 @@ explaining the reasoning; accept equivalent wording, clarify gaps and retry thos
 Revealable learning examples are not a scored pass. Do not invent answers while the giver is
 offline or call a rehearsed quiz proof of an unbuilt change.
 
-**Until the checkpoint passes, the change does not move.** No teammate review, no pull request
-for others to read, no merge. Not passing is an ordinary outcome and not a judgement of the
+**Where the checkpoint applies, the change does not move until it passes.** No teammate review, no
+pull request for others to read, no merge.
+
+**Where it applies is decided in advance, not in the moment.** People, agents and service events can
+all start work. Work that arrives from a signal, a webhook or a schedule, inside a path the profile
+has already authorized to run without a person, runs through: repair, verify, ship, and report. A
+human checkpoint on every change would make the factory useless for exactly the work it should
+absorb, and ceremony on a disposable change is not rigour.
+
+The agent never makes that call for itself. The profile sets, with the owner, which paths run
+unattended and what exceeds them — by stakes, by blast radius, by what the change touches. If work
+leaves that envelope, it stops, whatever started it: a signal-driven repair that turns out to change
+agreed behaviour, widen scope, touch something the owner named indispensable, or rest on an
+assumption nobody confirmed is no longer unattended work. Deciding in the moment that nobody is
+needed is the failure this gate exists to prevent; deciding in advance that a path is safe to run is
+the owner exercising judgement. Not passing is an ordinary outcome and not a judgement of the
 person: it means the explanation has not landed yet, which is the factory's problem to fix. Explain
 again differently and retry the questions that exposed the gap.
 
