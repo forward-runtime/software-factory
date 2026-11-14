@@ -7,6 +7,12 @@ Read target instructions, project profile and assignment. Confirm the actual rep
 owned files, agreed spec revision/criteria, dependencies, authority, budget and stop conditions.
 Fetch the named source if necessary; do not infer agreement from the newest working-tree file.
 
+**Check that the spec was actually agreed before writing anything.** If it contains assumptions the
+giver never confirmed, or if the record shows it was proposed and never answered, stop and return to
+`factory-plan`. A spec you wrote alone is a proposal, however carefully reasoned. Building against
+it produces work the giver never asked for, and verification and explanation of that work are
+wasted on it.
+
 Use [native execution](../../../docs/NATIVE-EXECUTION.md). A manager coordinates decisions and
 work; each builder owns a bounded slice in an isolated workspace. Use existing ticket/harness
 capabilities, not another runtime. Use a goal only when explicitly requested and exposed.

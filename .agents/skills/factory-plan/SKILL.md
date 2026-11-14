@@ -30,6 +30,31 @@ do not wait until a long prose specification has been written.
    It is a view of the spec, not another spec. Confirm behavior with the giver or cite the
    mandate that settles it. Save actual decisions with their source and scope.
 
+## Agreement is a gate, not a formality
+
+Delivery does not start until the giver has confirmed the spec. Not read it, not been sent it —
+confirmed it.
+
+Before any building begins, show the giver, in their own conversation:
+
+- what you understood the outcome to be, in your words so they can correct it;
+- **every assumption you made in their silence**, listed separately from what they actually said;
+- the choices that shape the result, with the option you would take and why;
+- what you will do next if they agree.
+
+Then stop and wait for their answer. An unanswered proposal, an opened artifact, a delivered
+notification or elapsed time is not agreement. Neither is the absence of an objection.
+
+**A later checkpoint does not license running unaligned until it.** If an assignment names a
+stopping point — an understanding check before review, an approval before merge — that is the
+*last* gate, not the only one. Treat a single named stop as a floor on alignment, never a ceiling.
+
+If the giver's instruction is already specific enough to settle a question, cite it and proceed
+rather than re-asking. The test is whether you are choosing on their behalf: a choice you invented
+needs confirmation, a choice they already made does not.
+
+Record what they actually confirmed, with its source, before assigning the work.
+
 Follow [the spec lifecycle](../../../docs/SPEC-LIFECYCLE.md) for new instructions, contradictions
 or uncertainty during build, verification or review. Show the changed requirement and affected
 work, resolve only missing intent, update the same spec and propagate the agreed revision.
