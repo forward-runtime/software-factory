@@ -27,6 +27,39 @@ conductor --json workspace create --project-id <project-id> \
 
 Use local model policy. Do not start a session merely because a prompt template exists.
 
+## Durable loops
+
+A loop that watches work must outlive the session that created it. Separate the two pieces, because
+they fail for different reasons and are bound differently.
+
+**The schedule** decides when something fires. **The runner** executes the agent.
+
+A chat-session timer is neither durable nor portable: it lives in the session's memory, is written
+to no file, and dies when that session ends — independently of any workspace lifetime. Treat it as a
+prototype, never as the installed mechanism.
+
+| Piece | Option | What it costs, what it binds |
+|---|---|---|
+| Schedule | CI cron (for example a scheduled GitHub Actions workflow) | Free on public repositories; the spec is committed and reviewable; portable to any repo |
+| Schedule | Any external cron or uptime service | Portable; one more service to own |
+| Runner | Conductor routine, triggered by its webhook | Runs on Conductor against existing subscription work; needs a **user API key** created in the Conductor dashboard — the workspace token is rejected for routine management |
+| Runner | The agent invoked directly inside CI | Portable, but each run bills the model provider; check the owner's spending ceiling before proposing it |
+
+Conductor routines are **webhook-triggered**: `--trigger` accepts `webhook` and the CLI describes a
+routine as running "when its webhook URL is called". A routine is therefore a durable runner, not a
+scheduler. Pairing a CI cron that POSTs to the webhook with a routine that executes the work keeps
+the schedule portable and committed while the agent runs against existing subscription work rather
+than per-call billing.
+
+`routine create` and `routine rotate-secret` print the webhook URL once. **That URL is the
+routine's credential**: anyone holding it can run the routine. Store it as a repository or
+organisation secret, never in a committed file, a prompt or a message, and rotate it if exposed.
+
+Commit the loop's definition — what it watches, how often, what it may write, and when it must stop
+and ask — so the loop survives its runner. Keep its cursor or state in a tracked file or the work
+record; state in an ignored directory dies with the machine. A loop whose memory is recoverable can
+be restarted. A loop whose memory was in a sandbox cannot.
+
 ## Sections, roles, and delivery status
 
 A manager, builder, reviewer, or observer is a **role**. A Conductor **section** groups workspaces
