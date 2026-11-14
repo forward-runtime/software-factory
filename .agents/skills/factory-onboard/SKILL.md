@@ -41,6 +41,15 @@ CLI or computer use. Verify needed read/create/update/link actions in the actual
 environment; another session's connection is not proof of access here.
 
 Learn how roles, Conductor sections and delivery states relate; runtime state is separate.
+
+Propose the observation loop as part of the process, not as an afterthought: what it watches, how
+often, what it may write, who it notifies and when it must stop and ask. See
+[factory-observe](../factory-observe/SKILL.md) for the conditions that warrant notifying the owner,
+and [durable loops](../../../docs/NATIVE-EXECUTION.md#durable-loops) for the difference between a
+schedule and a runner. Name the runner the team actually has; a loop bound to a chat session dies
+with it. Record the proposal in the profile and register nothing without the owner's say-so — a
+described loop is not a running one, and reporting it as running is the failure this skill exists
+to prevent.
 For a new organization, propose the minimal setup; for an existing team, map its meanings and
 preserve its workflow. Use [native execution](../../../docs/NATIVE-EXECUTION.md#sections-roles-and-delivery-status)
 for setup, transition ownership and closure; verify actual setup before declaring readiness.
