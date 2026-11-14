@@ -1,0 +1,7 @@
+.context/
+.env
+.env.*
+!.env.example
+node_modules/
+.DS_Store
+__pycache__/

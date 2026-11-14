@@ -1,0 +1,36 @@
+{
+  "version": "1.2",
+  "incident": {
+    "incident_id": "synthetic-incident-001",
+    "renotify": false,
+    "scoping_project_id": "synthetic-factory-test",
+    "scoping_project_number": 123456789012,
+    "url": "https://console.cloud.google.com/monitoring/alerting/incidents/synthetic-incident-001?project=synthetic-factory-test",
+    "started_at": 1794641400,
+    "ended_at": null,
+    "state": "open",
+    "resource": {
+      "type": "global",
+      "labels": {
+        "project_id": "synthetic-factory-test"
+      }
+    },
+    "policy_name": "SYNTHETIC factory signal test",
+    "policy_user_labels": {
+      "fixture": "synthetic"
+    },
+    "condition_name": "SYNTHETIC log match",
+    "condition": {
+      "name": "projects/synthetic-factory-test/alertPolicies/123456789/conditions/123456789",
+      "displayName": "SYNTHETIC log match",
+      "conditionMatchedLog": {
+        "filter": "resource.type=\"global\" log_id(\"factory-signal-test\") severity>=ERROR"
+      }
+    },
+    "documentation": {
+      "content": "SYNTHETIC TEST ONLY. Simulated worker reported an invalid task state. No real project or log exists.",
+      "mime_type": "text/markdown"
+    },
+    "summary": "SYNTHETIC: a test log matched the error filter; impact and root cause are unverified."
+  }
+}

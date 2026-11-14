@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "factory_profile_ref": null,
+  "readiness": {
+    "installation": "pending",
+    "synthetic_test": "pending",
+    "push": "blocked",
+    "pull": "blocked",
+    "scout": "blocked",
+    "escalation": "blocked"
+  },
+  "repository": {
+    "url": null,
+    "base_branch": null,
+    "checks": []
+  },
+  "owner": {
+    "identity": null,
+    "decision_source": null
+  },
+  "bindings": {
+    "conductor_project_id": null,
+    "cloud": {
+      "provider": null,
+      "project_id": null,
+      "allowed_filter": null
+    },
+    "alert_channel_ref": null,
+    "ticket": {
+      "system": null,
+      "project_id": null,
+      "needs_human_state_or_note": null
+    },
+    "chat": {
+      "system": null,
+      "channel_id": null
+    },
+    "phone_contact_ref": null,
+    "source_allowlist": []
+  },
+  "mandate": {
+    "approval_ref": null,
+    "version": null,
+    "approved_at": null,
+    "investigation": false,
+    "builder_pr": false,
+    "allowed_files": [],
+    "stop_conditions": [],
+    "merge": false,
+    "deploy": false
+  },
+  "bounds": {
+    "new_triages_per_utc_day": 5,
+    "provider_spend_usd": 0,
+    "retry_limit": 1,
+    "scout_intents_per_day": 2,
+    "timezone": "UTC"
+  },
+  "escalation": {
+    "chat_authorized": false,
+    "response_timeout_minutes": null,
+    "phone_allowed": false,
+    "urgency_rule": null,
+    "per_call_cap_usd": 0
+  },
+  "coordination": {
+    "manager_session_ref": null,
+    "durable_ledger_ref": null,
+    "routine_handoff_ref": null,
+    "cursor_ref": null,
+    "serialization_receipt": null
+  },
+  "receipts": [],
+  "unresolved_decisions": [
+    "Owner, destinations, mandate, billing controls and native setup are unbound."
+  ]
+}

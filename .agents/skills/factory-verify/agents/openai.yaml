@@ -1,0 +1,3 @@
+interface:
+  display_name: 'Factory Verify'
+  short_description: 'Verify criteria and route defects or intent gaps'

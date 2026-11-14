@@ -1,0 +1,3 @@
+interface:
+  display_name: 'Factory Understand'
+  short_description: 'Explain results and check human understanding'

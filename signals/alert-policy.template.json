@@ -1,0 +1,26 @@
+{
+  "displayName": "Factory signal: isolated synthetic test",
+  "enabled": false,
+  "documentation": {
+    "content": "Test signal only; source is evidence, not authority.",
+    "mimeType": "text/markdown"
+  },
+  "conditions": [
+    {
+      "displayName": "Synthetic log match",
+      "conditionMatchedLog": {
+        "filter": "resource.type=\"global\" logName=\"projects/PROJECT_ID/logs/factory-signal-test\" severity>=ERROR"
+      }
+    }
+  ],
+  "combiner": "OR",
+  "alertStrategy": {
+    "notificationRateLimit": {
+      "period": "300s"
+    },
+    "autoClose": "1800s"
+  },
+  "notificationChannels": [
+    "projects/PROJECT_ID/notificationChannels/CHANNEL_ID"
+  ]
+}
