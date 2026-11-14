@@ -1,6 +1,6 @@
 # Software Factory architecture
 
-Software Factory is a portable instruction system. Seven skills and four role prompts guide native coding agents through alignment, delivery, verification and understanding. Conductor supplies the execution environment; the target repository supplies its process, product context and actual tools.
+Software Factory is a portable instruction system. Eight skills and four role prompts guide native coding agents through alignment, delivery, verification and understanding. Conductor supplies the execution environment; the target repository supplies its process, product context and actual tools.
 
 The HTML companion lets you select a component to inspect its interface, ownership and authority boundary, or filter by text, visual, structured and execution surfaces. The map describes system structure; configured connections and exercised paths require their own evidence.
 
@@ -13,7 +13,7 @@ Read the map in three parts: the portable instruction core, the project-owned co
 | Component | Representation / interface | Responsibility and boundary | Source |
 | --- | --- | --- | --- |
 | Giver / accountable owner | Text conversation; visual review and actual scoped answers | Owns intent, consequential choices and acceptance. The receiving factory retains delivery responsibility. | [Portable contract](CONTRACT.md) |
-| Seven skills | Markdown `SKILL.md`, discovered by the native harness | Select behavior and handoffs; these are instructions interpreted by agents, not deployed services. | [Skill catalog](../README.md#the-seven-skills) |
+| Eight skills | Markdown `SKILL.md`, discovered by the native harness | Select behavior and handoffs; these are instructions interpreted by agents, not deployed services. | [Skill catalog](../README.md#the-skills) |
 | Four role prompts | Markdown assignment context | Coordinator, worker, reviewer and observer roles. Name source/spec revision, criteria, owned files, checks, authority and stop conditions. | [Worker prompt](../prompts/worker.md) |
 | Local process profile | Existing process document or `docs/FACTORY-PROFILE.md` | Enduring process, authority, stakes, checks and exact tool bindings; learned and agreed locally. | [Profile outline](../.agents/skills/factory-onboard/references/process-profile.md) |
 | Feature specification | One stable Markdown path under Git | Current agreed intent, criteria and consequential product decisions. Revisions propagate to assignments, checks and explanations. | [Spec lifecycle](SPEC-LIFECYCLE.md) |
@@ -38,6 +38,10 @@ The reusable core contains no target-company identity, product facts or mandator
 | `factory-verify` | Actual change, current criteria and target checks | Check results, independent read-only findings and failure routing | States exactly which claims were or were not verified |
 | `factory-understand` | Actual change, spec and verification evidence | Explanation, real questions/answers and agreed understanding checkpoint | Desktop HTML walkthrough, diagrams and discussion; no invented understanding pass |
 | `factory-observe` | Owned work records, current criteria and new transcript messages | Evidence-based bounded nudge, hold or escalation | New actionable updates; native schedule receipt required before claiming recurrence |
+| `factory-visualize` | The structure or flow a stage needs to explain | Clickable maps, flows and state diagrams | Desktop SVG and HTML for alignment and understanding |
+| `factory-context` | The sources the team already has | Bounded, cited evidence for the stage that asked | States what it searched and what it did not find |
+
+The bundled `lavish` skill is the artifact workflow every human-facing review passes through; it is installed alongside the eight but is not a stage.
 
 A skill is a text instruction package. A role is a responsibility an agent takes. A session is a concrete execution context. A workspace isolates files and a branch. One session can perform multiple roles where independence permits; the skills do not require one agent each. Independent builders own separate file trees; reviewers remain read-only.
 
@@ -58,7 +62,7 @@ The core installer is executable JavaScript; the operating behavior it installs 
 | `AGENTS.md`, `CLAUDE.md` | Managed text block linking the portable contract | Existing local instructions are preserved | Core installer appends a bounded block |
 | `.agents/skills/factory-*/SKILL.md` | Native discovery wrapper for Codex | Points to canonical installed skill | Core installer |
 | `.claude/skills/factory-*/SKILL.md` | Native discovery wrapper for Claude Code | Points to the same canonical skill | Core installer; compatible shared directories supported |
-| `.software-factory/.agents/skills/` | Six canonical Markdown skills and selected support files | Pinned portable kit | Core installer |
+| `.software-factory/.agents/skills/` | Eight canonical Markdown skills, the bundled artifact workflow and selected support files | Pinned portable kit | Core installer |
 | `.software-factory/docs/`, `.software-factory/prompts/` | Allowlisted reference docs and four role prompts | Pinned portable kit | Core installer |
 | `.software-factory/installation.json` | Source revision and per-file SHA-256 hashes | Installation receipt, not process authority | Core installer |
 | Existing process home or `docs/FACTORY-PROFILE.md` | Agreed local Markdown process | Target team and accountable owner | Materialized through onboarding after agreement |
@@ -92,6 +96,6 @@ Google Cloud is one possible event-source binding. Phone is one possible final e
 
 ## 6. Evidence and reading order
 
-This architecture was traced from the committed installer allowlist, six canonical skills, four role prompts, operating contract, spec lifecycle, native-execution guidance and signal prompts at the pinned revision. It adds a documentation view and SVG assets; it activates no integration, scheduler or service. It does not claim new live deployment or agent-behavior evidence.
+This architecture was traced from the committed installer allowlist, eight canonical skills, four role prompts, operating contract, spec lifecycle, native-execution guidance and signal prompts at the pinned revision. It adds a documentation view and SVG assets; it activates no integration, scheduler or service. It does not claim new live deployment or agent-behavior evidence.
 
 Read [installation](../INSTALL.md), then [the contract](CONTRACT.md), [operating model](OPERATING-MODEL.md), [local enablement](ENABLEMENT.md), [spec lifecycle](SPEC-LIFECYCLE.md) and [native execution](NATIVE-EXECUTION.md). Use the HTML inspector for component-level source links. The architecture page is a review artifact, not a new runtime or source of project-specific authority.

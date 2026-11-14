@@ -43,6 +43,25 @@ profile, current spec and work record retain their existing authority. Keep sour
 No decorative eyebrow labels, generic subtitles, obvious-control tutorials, metadata legends or
 boilerplate footers. Keep revision/hash data in metadata or the work record.
 
+## What a diagram may not carry
+
+A map travels further than the repository it was drawn in: into decks, pull requests, public
+documentation and screenshots taken by people who never saw the source. Draw it so that leaving
+is safe.
+
+- Name only what this artifact's audience is already entitled to see. Keep credentials, tokens,
+  internal hostnames, account, customer and ticket identifiers, private service names, unreleased
+  product names and personal data out of labels, legends, `aria-label` text, source links and any
+  embedded model. Name the role, not the instance.
+- Check what does not render. Embedded JSON, generator comments, document titles and metadata,
+  commented-out nodes and base64 payloads all ship inside the file.
+- When you borrow a look from an existing artifact, take the visual grammar only: type scale,
+  palette, spacing, node and edge treatment. Carry over none of its content, identifiers, copy or
+  embedded images. A style reference is not a source of facts.
+- Scrub before the artifact crosses a boundary, not after. A published diagram is cached, indexed
+  and screenshotted; deleting the file later retracts nothing. Where you are unsure whether a name
+  may travel, ask its owner before publishing rather than afterwards.
+
 ## Produce and verify
 
 Use [the spatial artifact recipe](references/spatial-artifact.md) for the included offline
