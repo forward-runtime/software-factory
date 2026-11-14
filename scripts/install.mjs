@@ -26,6 +26,7 @@ export function readSource() {
     '.agents/skills/lavish/LICENSE',
     '.agents/skills/lavish/UPSTREAM.json',
     '.agents/skills/factory-onboard/references/process-profile.md',
+    '.agents/skills/factory-onboard/references/slack-notifications.md',
     '.agents/skills/factory-visualize/references/spatial-artifact.md',
     '.agents/skills/factory-visualize/references/spatial-artifact.html',
     '.agents/skills/factory-visualize/SKILL.html',

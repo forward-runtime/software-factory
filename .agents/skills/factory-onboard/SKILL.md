@@ -33,6 +33,9 @@ Learn the decision surface separately from notification channels and their allow
 A notification-only channel links back to the current question/artifact; it does not host the
 interview or establish agreement. Preserve the team’s actual choice of discussion surface.
 
+If the team chooses Slack for notifications, use [the Slack binding reference](references/slack-notifications.md):
+post-only scope, owner-supplied credential through the environment, and what counts as delivery evidence.
+
 For work tracking, learn the platform, exact destination and available access method: MCP/API,
 CLI or computer use. Verify needed read/create/update/link actions in the actual worker
 environment; another session's connection is not proof of access here.
