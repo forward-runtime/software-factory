@@ -6,7 +6,7 @@ import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 
 const source = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const skills = ['onboard', 'plan', 'deliver', 'verify', 'understand', 'observe'].map(n => `factory-${n}`);
+const skills = ['onboard', 'plan', 'deliver', 'verify', 'understand', 'observe', 'visualize'].map(n => `factory-${n}`);
 const docs = ['CONTRACT.md', 'CONTRACT.html', 'DOCUMENT-REVIEW.md', 'DOCUMENT-REVIEW.html', 'HTML-ARTIFACTS.html', 'OPERATING-MODEL.md', 'CONNECTIONS.md', 'SPEC-LIFECYCLE.md', 'NATIVE-EXECUTION.md', 'HTML-ARTIFACTS.md', 'assets/factory-components.svg', 'ENABLEMENT.md', 'ENABLEMENT.html'];
 const prompts = ['coordinator.md', 'worker.md', 'reviewer.md', 'observer.md'];
 const begin = '<!-- software-factory:begin -->';
@@ -24,6 +24,13 @@ export function readSource() {
   const portableFiles = [
     ...skills.flatMap(skill => [`.agents/skills/${skill}/SKILL.md`, `.agents/skills/${skill}/agents/openai.yaml`]),
     '.agents/skills/factory-onboard/references/process-profile.md',
+    // factory-visualize ships a reference, a renderer and canvas assets; its SKILL.md links to
+    // them, so omitting them would install a skill whose own links do not resolve.
+    '.agents/skills/factory-visualize/references/spatial-artifact.md',
+    '.agents/skills/factory-visualize/references/spatial-artifact.html',
+    '.agents/skills/factory-visualize/assets/spatial.html',
+    '.agents/skills/factory-visualize/assets/example.json',
+    '.agents/skills/factory-visualize/scripts/render.mjs',
     ...docs.map(doc => `docs/${doc}`),
     ...prompts.map(prompt => `prompts/${prompt}`),
   ];
