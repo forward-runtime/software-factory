@@ -21,6 +21,12 @@ test('offline archive installs through npm bin, preserves local policy, repeats 
   const receipt = JSON.parse(fs.readFileSync(path.join(root,'.software-factory/installation.json')));
   assert.equal(receipt.sourceRevision,packed.sourceRevision);
   assert.ok(fs.existsSync(path.join(root,'.software-factory/docs/ENABLEMENT.md')));
+  const context = path.join(root,'.software-factory/.agents/skills/factory-context');
+  for (const file of ['SKILL.md','references/bindings.md','references/local.md','references/packet.md','scripts/read_local.py']) assert.ok(fs.existsSync(path.join(context,file)),file);
+  const fixture = path.join(source,'tests/fixtures/context/manifest.json');
+  const read = JSON.parse(execFileSync('python3',[path.join(context,'scripts/read_local.py'),fixture,'--limit','1'],{encoding:'utf8'}));
+  assert.equal(read.read[0].source.id,'meeting-1');
+  assert.equal(read.read[0].excerpts[2].anchor,'export:meeting-1#L3');
   // Extracted release also works outside any source Git checkout; altered payload is rejected before target writes.
   execFileSync('tar',['xzf',packed.archive,'-C',temporary]);
   const release=path.join(temporary,'package');

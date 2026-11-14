@@ -6,7 +6,7 @@ import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 
 const source = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const skills = ['onboard', 'plan', 'deliver', 'verify', 'understand', 'observe', 'visualize'].map(n => `factory-${n}`).concat('lavish');
+const skills = ['onboard', 'plan', 'deliver', 'verify', 'understand', 'observe', 'visualize', 'context'].map(n => `factory-${n}`).concat('lavish');
 const docs = ['CONTRACT.md', 'CONTRACT.html', 'DOCUMENT-REVIEW.md', 'DOCUMENT-REVIEW.html', 'HTML-ARTIFACTS.html', 'OPERATING-MODEL.md', 'CONNECTIONS.md', 'SPEC-LIFECYCLE.md', 'NATIVE-EXECUTION.md', 'HTML-ARTIFACTS.md', 'assets/factory-components.svg', 'ENABLEMENT.md', 'ENABLEMENT.html', 'LAVISH.md', 'LAVISH.html'];
 const prompts = ['coordinator.md', 'worker.md', 'reviewer.md', 'observer.md'];
 const begin = '<!-- software-factory:begin -->';
@@ -33,6 +33,7 @@ export function readSource() {
     '.agents/skills/factory-visualize/assets/spatial.html',
     '.agents/skills/factory-visualize/assets/example.json',
     '.agents/skills/factory-visualize/scripts/render.mjs',
+    ...['SKILL.html', 'references/bindings.md', 'references/bindings.html', 'references/local.md', 'references/local.html', 'references/packet.md', 'references/packet.html', 'scripts/read_local.py'].map(n => `.agents/skills/factory-context/${n}`),
     ...docs.map(doc => `docs/${doc}`),
     ...prompts.map(prompt => `prompts/${prompt}`),
   ];

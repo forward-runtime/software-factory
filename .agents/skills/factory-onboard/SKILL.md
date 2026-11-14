@@ -76,3 +76,9 @@ authorize product implementation. Revisit the local profile when the team change
 If the project selects the separately installed signals kit, invoke `.factory/signals/onboard.md`
 after the core interview. Keep one authoritative process profile; link signal configuration to it,
 reuse its decisions and leave unconnected paths blocked. Core onboarding needs no live signals.
+
+Learn the existing context home, document/search index, meeting notes, repository sources,
+and actual access methods. Record authorized scope/audience, freshness and persistence boundaries
+in the profile. For source discovery, export/import or evidence retrieval, hand off to
+[factory-context](../factory-context/SKILL.md); preserve missing-access gaps rather than assuming
+an account connection or requiring a new index.

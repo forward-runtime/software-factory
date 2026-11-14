@@ -1,0 +1,6 @@
+{"scope":"demo team only","exported_at":"2026-11-14","sources":[
+{"id":"meeting-1","path":"meeting-1.txt","uri":"export:meeting-1","revision":"r2","date":"2026-10-01","permissions":"demo team"},
+{"id":"meeting-2","path":"meeting-2.txt","uri":"export:meeting-2","revision":"r1","date":"2026-11-01","permissions":"demo team"},
+{"id":"old-summary","path":"old-summary.md","uri":"export:old-summary","revision":"r1","permissions":"demo team"},
+{"id":"support-notes","path":"unavailable.txt","uri":"export:support-notes","permissions":"demo team"}
+]}

@@ -44,3 +44,7 @@ Preserve the team's states. Missing write access leaves an honest draft in the P
 Dispatch ready criteria through [the worker assignment](../../../prompts/worker.md).
 Give writers isolated workspaces and nonoverlapping files. Hold unresolved dependent work while
 independent preparation continues. Report actual session identities; a plan is not a running fleet.
+
+When intent depends on documents or meetings, request a bounded evidence packet through
+[factory-context](../factory-context/SKILL.md) using the learned source bindings. Keep spec/profile
+authoritative, seek contradictory evidence, and route unresolved governing authority to its owner.

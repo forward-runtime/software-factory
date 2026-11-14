@@ -31,16 +31,30 @@ function snapshot(root) {
 test('fresh install, both discovery directories, references, minimal portable payload and repeat', t => {
   const root = repo(t);
   assert.ok(install(root).written > 0);
+  const installedRenderer=path.join(root,'.software-factory/.agents/skills/factory-visualize/scripts/render.mjs');
+  const example=path.join(root,'.software-factory/.agents/skills/factory-visualize/assets/example.json');
+  const output=path.join(root,'.context','visual-check');
+  execFileSync(process.execPath,[installedRenderer,example,output]);
+  assert.ok(fs.readFileSync(output+'.html','utf8').includes('Booking example'));
+  assert.ok(fs.readFileSync(output+'.md','utf8').includes('Availability conflict'));
   const before = snapshot(root);
   assert.equal(install(root).written, 0);
   assert.deepEqual(snapshot(root), before);
-  for (const name of ['onboard', 'plan', 'deliver', 'verify', 'understand', 'observe']) {
+  for (const name of ['onboard', 'plan', 'deliver', 'verify', 'understand', 'observe', 'visualize', 'context']) {
     for (const harness of ['.agents', '.claude']) {
       const wrapper = fs.readFileSync(path.join(root, harness, 'skills', `factory-${name}`, 'SKILL.md'), 'utf8');
       assert.match(wrapper, new RegExp(`name: factory-${name}`));
       assert.ok(wrapper.includes(`.software-factory/.agents/skills/factory-${name}/SKILL.md`));
     }
   }
+  for(const harness of ['.agents','.claude']){
+    const wrapper=fs.readFileSync(path.join(root,harness,'skills/lavish/SKILL.md'),'utf8');
+    assert.ok(wrapper.includes('.software-factory/.agents/skills/lavish/SKILL.md'));
+  }
+  assert.ok(fs.readFileSync(path.join(root,'.software-factory/.agents/skills/lavish/LICENSE'),'utf8').includes('MIT License'));
+  const upstream=JSON.parse(fs.readFileSync(path.join(root,'.software-factory/.agents/skills/lavish/UPSTREAM.json')));
+  assert.equal(upstream.repository,'https://github.com/kunchenguid/lavish-axi');
+  assert.ok(fs.existsSync(path.join(root,'.software-factory/docs/LAVISH.md')));
   for (const [name, value] of Object.entries(before)) {
     if (!name.startsWith('.software-factory/') || !name.endsWith('.md')) continue;
     const content = Buffer.from(value[1], 'base64').toString();
@@ -68,6 +82,12 @@ test('preserves instruction bytes, local skills, shared Claude discovery directo
   assert.ok(fs.readFileSync(path.join(root, 'CLAUDE.md'), 'utf8').startsWith('Local Claude rules.\n\n'));
   assert.equal(fs.readFileSync(path.join(root, '.agents/skills/local/SKILL.md'), 'utf8'), 'Keep me');
   assert.equal(fs.readlinkSync(path.join(root, '.claude/skills')), '../.agents/skills');
+  const installedRenderer=path.join(root,'.software-factory/.agents/skills/factory-visualize/scripts/render.mjs');
+  const example=path.join(root,'.software-factory/.agents/skills/factory-visualize/assets/example.json');
+  const output=path.join(root,'.context','visual-check');
+  execFileSync(process.execPath,[installedRenderer,example,output]);
+  assert.ok(fs.readFileSync(output+'.html','utf8').includes('Booking example'));
+  assert.ok(fs.readFileSync(output+'.md','utf8').includes('Availability conflict'));
   const before = snapshot(root); assert.equal(install(root).written, 0); assert.deepEqual(snapshot(root), before);
 });
 

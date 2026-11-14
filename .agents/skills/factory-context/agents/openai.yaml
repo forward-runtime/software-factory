@@ -1,0 +1,4 @@
+interface:
+  display_name: "Factory Context"
+  short_description: "Ground assignments in scoped source evidence"
+  default_prompt: "Use $factory-context to retrieve a bounded evidence packet for this assignment from authorized existing sources."

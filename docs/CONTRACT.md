@@ -22,9 +22,10 @@ Markdown plus a matching HTML companion, with changed text highlighted inline in
 ## Skills
 
 Onboard learns and installs the local process; plan establishes intent/stakes and reconciles
-changes; deliver builds; verify checks and routes failures; understand explains and checks human
-understanding; observe inspects and nudges owned work; visualize supplies spatial maps and
-behavioral diagrams for alignment and understanding. Load only the relevant skill/reference.
+changes; deliver builds; verify checks and routes failures; context retrieves bounded source
+evidence from existing tools; understand explains and checks human understanding; observe inspects
+and nudges owned work; visualize supplies spatial maps and behavioral diagrams for alignment and
+understanding. Load only the relevant skill/reference.
 Codex discovers `.agents/skills`; Claude Code discovers `.claude/skills`. In an installed repository,
 these entry points load canonical skills under `.software-factory/.agents/skills`. Resolve supporting
 links relative to the canonical file, not the discovery wrapper. Verify discovery in the session.

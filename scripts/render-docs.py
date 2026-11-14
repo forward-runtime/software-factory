@@ -12,13 +12,10 @@ baseline=subprocess.check_output(["git","rev-parse", "--verify", args.base],text
 def render(filename):
  p=Path(filename);source=p.read_text()
  base=subprocess.run(['git','show',baseline+':'+str(p)],capture_output=True,text=True)
- is_new=base.returncode!=0
- old=base.stdout.splitlines() if not is_new else []
+ old=base.stdout.splitlines() if base.returncode==0 else []
  lines=source.splitlines()
  changed_lines=set()
- # A first version has nothing to contrast with, so it carries no change marks at all.
- # Highlighting every line would mark nothing meaningfully and just add noise.
- if not is_new:
+ if base.returncode==0:
   for tag,_,__,start,end in difflib.SequenceMatcher(None,old,lines).get_opcodes():
    if tag in ('insert','replace'):changed_lines.update(range(start,end))
  def inline(s,changed):
@@ -63,7 +60,7 @@ def render(filename):
   else:close_list();blocks.append('<p>'+inline(line[2:] if line.startswith('> ') else line,changed)+'</p>')
  close_list()
  if table:blocks.append('</table>')
- css='body{background:#f4f4ee;color:#24332d;font:16px/1.65 system-ui;margin:40px auto;max-width:1080px;padding:0 30px}main{background:white;padding:32px 40px;border-top:5px solid #346958}h1{line-height:1.2}p{margin:8px 0}h2{margin-top:30px}mark{background:#f0dda0;color:inherit;box-decoration-break:clone}pre{overflow:auto;background:#f3f5f1;padding:16px}code{font-size:13px;overflow-wrap:anywhere}table{border-collapse:collapse;font-size:14px}td{border:1px solid #d9dfd6;padding:10px;vertical-align:top}a{color:#225e7a}.legend{font-size:13px}'
- legend='New document: all text highlighted.' if base.returncode else 'New/changed text highlighted against '+baseline+'; meaningful removals are described in the work record.'
- p.with_suffix('.html').write_text('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+html.escape(source.splitlines()[0].lstrip('# '))+'</title><style>'+css+'</style></head><body><aside class="legend">Review baseline: '+legend+' Mustard #f0dda0 indicates change, not approval. Markdown is canonical. Source SHA256 '+hashlib.sha256(source.encode()).hexdigest()+'</aside><main>'+''.join(blocks)+'</main></body></html>\n')
+ css='body{background:#f4f4ee;color:#24332d;font:16px/1.65 system-ui;margin:40px auto;max-width:1080px;padding:0 30px}main{background:white;padding:32px 40px;border-top:5px solid #346958}h1{line-height:1.2}p{margin:8px 0}h2{margin-top:30px}mark{background:#f0dda0;color:inherit;box-decoration-break:clone}pre{overflow:auto;background:#f3f5f1;padding:16px}code{font-size:13px;overflow-wrap:anywhere}table{border-collapse:collapse;font-size:14px}td{border:1px solid #d9dfd6;padding:10px;vertical-align:top}a{color:#225e7a}'
+ metadata='<meta name="factory-review-base" content="'+baseline+'"><meta name="factory-source-sha256" content="'+hashlib.sha256(source.encode()).hexdigest()+'">'
+ p.with_suffix('.html').write_text('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'+metadata+'<title>'+html.escape(source.splitlines()[0].lstrip('# '))+'</title><style>'+css+'</style></head><body><main>'+''.join(blocks)+'</main></body></html>\n')
 for filename in args.files:render(filename)

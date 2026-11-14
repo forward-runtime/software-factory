@@ -12,3 +12,7 @@ Describe the agreed operating process, not onboarding history. Omit irrelevant o
 - **Tools and boundaries:** actual repository, harness, work/context destinations and permitted effects.
 - **Selected components:** the roles, skills and prompts this process needs, with their pinned source.
 - **Unresolved decisions:** what remains unknown and which dependent work must wait.
+
+- **Context bindings:** existing knowledge/search home, meetings and repository sources; source owner,
+  authorized scope/audience, discovered access and capabilities, freshness, persistence/retention,
+  known coverage gaps and locally agreed decision-retrieval readiness examples.

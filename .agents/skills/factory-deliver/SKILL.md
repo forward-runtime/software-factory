@@ -27,3 +27,7 @@ Then use `factory-understand` to explain the actual result and resolve questions
 When the giver is unavailable, finish authorized independent work and prepare the human checkpoint.
 Do not manufacture an answer, understanding pass, merge or release. Leave one compact receipt:
 spec/criteria, change, evidence, remaining decision and exact next action.
+
+For assignments depending on corpus evidence, request or refresh the bounded packet through
+[factory-context](../factory-context/SKILL.md). Check source versions and access scope before relying
+on derived claims; unresolved authority holds affected work and returns to planning.

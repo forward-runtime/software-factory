@@ -1,0 +1,4 @@
+Meeting ID: meeting-1; revision: r2; date: 2026-10-01
+00:10 Evan: I propose keeping every event forever.
+00:25 Mira: For the demo release I agree to 30 days. This supersedes our September 90-day proposal.
+00:40 Mira: Regulated export retention needs legal review; no agreement on that yet.
