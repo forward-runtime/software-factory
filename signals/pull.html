@@ -1,0 +1,28 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Manager: one five-minute tick</title><style>body{max-width:980px;margin:56px auto;padding:0 24px;color:#20201e;background:#faf9f5;font:16px/1.65 system-ui}pre{white-space:pre-wrap;font:inherit}a{color:#344f67}small{color:#65645e}</style><h1>Manager: one five-minute tick</h1><pre># Manager: one five-minute tick
+
+Before acting, read `.factory/signals-profile.json`. If `factory_profile_ref` is set, resolve
+that repository-relative path inside this target repository and read the authoritative process
+profile. Its owner, bindings, mandate, spending, escalation and workflow decisions take precedence
+over duplicate JSON fields; retain signal-specific configuration and receipts from the JSON.
+If the reference is missing, escapes the repository, is unreadable, or conflicts remain ambiguous,
+park the signal and report the gap. Never fall back to stale duplicate authority. A null reference
+means the unbound standalone profile applies; it grants no external actions by default.
+
+Read repo instructions, `.factory/signals-profile.json` and the durable ledger checkpoint.
+Verify this is the profile&#x27;s designated manager. If not, park without claiming/dispatching.
+Use only approved source bindings and $0 provider-spend operations. No binding: record a local
+blocked receipt once, no speculative cloud/ticket searches. Do not create another scheduler.
+
+Read only source updates after the saved cursor, bounded to 10 events per tick. Feed each
+through triage.md, including routine intake drafts handed to this manager. Serialize ledger
+claims and daily slot reservations; save work item ID and dispatch receipt before advancing
+the cursor. If delivery/dispatch outcome is uncertain, park needs-human rather than resend.
+Do not advance past failed intake; bound retries to the profile limit and retain the checkpoint.
+Duplicates update existing records without launching builders. Save cursor/time/counts and
+failures as a tick receipt. A failed source query is a factory limitation, not “no incidents”.
+
+Review waiting owner decisions. Apply only the recorded escalation timeout/consent/cap;
+otherwise retain needs-human. No repeated messages without a new escalation condition.
+Before reporting active scheduling, verify CronList and a real tick receipt; no persistence
+claim beyond the installed tools. Report stale/expired scheduling when observed.
+</pre></html>
