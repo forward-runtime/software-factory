@@ -128,6 +128,26 @@ export function install(target) {
 }
 
 if (process.argv[1] && fs.realpathSync(process.argv[1]) === fileURLToPath(import.meta.url)) {
-  try { console.log(JSON.stringify(install(process.argv.length === 3 ? process.argv[2] : undefined))); }
+  try {
+    const result = install(process.argv.length === 3 ? process.argv[2] : undefined);
+    console.log(JSON.stringify(result));
+    // stdout stays machine-readable; guidance goes to stderr.
+    if (result.written > 0) {
+      console.error([
+        '',
+        'Installed. Two things before you use it:',
+        '',
+        '1. Your agent session cannot see the skills yet. A session reads its skill catalog at',
+        '   start, so skills installed mid-session are invisible to it. Restart the session, or',
+        '   start a new one, then confirm the skills are listed before relying on them.',
+        '   Until then, load them by explicit path:',
+        '     .software-factory/.agents/skills/<skill>/SKILL.md',
+        '',
+        '2. Run factory-onboard. Installing does not agree a process, connect any service, or',
+        '   authorise building a product.',
+        '',
+      ].join('\n'));
+    }
+  }
   catch (error) { console.error(error.message); process.exitCode = 1; }
 }

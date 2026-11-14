@@ -44,6 +44,11 @@ Pass that directory's absolute path to the installer. This does not create a rem
 
 ## First entry
 
+**Restart the agent session first.** A session reads its skill catalog when it starts, so skills
+installed during that session are invisible to it — `factory-onboard` will come back as an unknown
+skill even though every file is on disk and both discovery directories are correct. This is the
+first thing most people hit. Restart, then confirm the skills are listed before relying on them.
+
 Start or refresh the native agent session in the target repo. Inspect the actual skill catalog and invoke `factory-onboard`; if discovery is stale or unavailable, read `.software-factory/.agents/skills/factory-onboard/SKILL.md` explicitly. Resolve its references from that canonical location. Installed wrappers are not proof of discovery.
 
 Read [the enablement guide](docs/ENABLEMENT.md), installed as `.software-factory/docs/ENABLEMENT.md`. Onboarding reuses known decisions, interviews only consequential unknowns, presents a Markdown/HTML proposal, and materializes one process profile only after actual agreement. No profile agreement, understanding pass or acceptance follows automatically from installation.
