@@ -1,0 +1,253 @@
+{
+  "title": "Booking example",
+  "overview": "A synthetic product for reserving appointments. The model is proposed for alignment; it is not an implemented booking service.",
+  "spec": {
+    "path": "example-spec.md",
+    "revision": "synthetic-1"
+  },
+  "views": [
+    {
+      "id": "context",
+      "title": "System",
+      "nodes": [
+        {
+          "id": "customer",
+          "title": "Customer",
+          "kind": "person",
+          "x": 60,
+          "y": 220,
+          "details": "Chooses a time and requests an appointment."
+        },
+        {
+          "id": "booking",
+          "title": "Booking system",
+          "kind": "system",
+          "x": 440,
+          "y": 220,
+          "details": "Accepts requests and reports a confirmed booking or an unavailable slot.",
+          "opens": "containers"
+        },
+        {
+          "id": "calendar",
+          "title": "Calendar provider",
+          "kind": "system",
+          "x": 830,
+          "y": 220,
+          "details": "External calendar integration; access has not been configured."
+        }
+      ],
+      "edges": [
+        {
+          "from": "customer",
+          "to": "booking",
+          "label": "Booking request"
+        },
+        {
+          "from": "booking",
+          "to": "calendar",
+          "label": "Availability and reservation"
+        }
+      ]
+    },
+    {
+      "id": "containers",
+      "title": "Containers",
+      "boundary": "Booking system",
+      "nodes": [
+        {
+          "id": "web",
+          "title": "Web application",
+          "kind": "container",
+          "x": 60,
+          "y": 180,
+          "details": "Presents availability and booking results to the customer."
+        },
+        {
+          "id": "api",
+          "title": "Booking API",
+          "kind": "container",
+          "x": 440,
+          "y": 180,
+          "details": "Validates availability and creates a reservation.",
+          "opens": "components"
+        },
+        {
+          "id": "store",
+          "title": "Reservation store",
+          "kind": "container",
+          "x": 830,
+          "y": 180,
+          "details": "Stores reservation state and prevents duplicate active reservations."
+        }
+      ],
+      "edges": [
+        {
+          "from": "web",
+          "to": "api",
+          "label": "HTTPS booking request"
+        },
+        {
+          "from": "api",
+          "to": "store",
+          "label": "Reservation transaction"
+        }
+      ]
+    },
+    {
+      "id": "components",
+      "title": "API components",
+      "boundary": "Booking API",
+      "nodes": [
+        {
+          "id": "availability",
+          "title": "Availability guard",
+          "kind": "component",
+          "x": 60,
+          "y": 200,
+          "details": "Checks whether the requested slot can be reserved."
+        },
+        {
+          "id": "writer",
+          "title": "Reservation writer",
+          "kind": "component",
+          "x": 440,
+          "y": 200,
+          "details": "Proposed atomic reservation write; concurrent conflicts require an unavailable result."
+        },
+        {
+          "id": "response",
+          "title": "Response mapper",
+          "kind": "component",
+          "x": 830,
+          "y": 200,
+          "details": "Maps acceptance or an availability conflict into the customer-facing response."
+        }
+      ],
+      "edges": [
+        {
+          "from": "availability",
+          "to": "writer",
+          "label": "Reservation command"
+        },
+        {
+          "from": "writer",
+          "to": "response",
+          "label": "Accepted or conflict"
+        }
+      ]
+    },
+    {
+      "id": "flow",
+      "title": "Booking flow",
+      "boundary": "Proposed request handling",
+      "nodes": [
+        {
+          "id": "request",
+          "title": "Receive request",
+          "kind": "action",
+          "x": 60,
+          "y": 140,
+          "details": "A customer submits a requested slot."
+        },
+        {
+          "id": "check",
+          "title": "Check availability",
+          "kind": "action",
+          "x": 440,
+          "y": 140,
+          "details": "Check current availability before reserving."
+        },
+        {
+          "id": "confirm",
+          "title": "Confirm reservation",
+          "kind": "action",
+          "x": 830,
+          "y": 140,
+          "details": "Create one reservation when the slot is available."
+        },
+        {
+          "id": "reject",
+          "title": "Return unavailable",
+          "kind": "action",
+          "x": 440,
+          "y": 430,
+          "details": "Tell the customer to choose another time; do not invent a successful reservation."
+        }
+      ],
+      "edges": [
+        {
+          "from": "request",
+          "to": "check",
+          "label": "Requested slot"
+        },
+        {
+          "from": "check",
+          "to": "confirm",
+          "label": "Reserve",
+          "condition": "available"
+        },
+        {
+          "from": "check",
+          "to": "reject",
+          "label": "Reject",
+          "condition": "already taken"
+        }
+      ]
+    },
+    {
+      "id": "state",
+      "title": "Reservation states",
+      "nodes": [
+        {
+          "id": "pending",
+          "title": "Pending",
+          "kind": "state",
+          "x": 60,
+          "y": 180,
+          "details": "Requested reservation awaiting an availability check."
+        },
+        {
+          "id": "confirmed",
+          "title": "Confirmed",
+          "kind": "state",
+          "x": 440,
+          "y": 180,
+          "details": "Reservation was accepted."
+        },
+        {
+          "id": "cancelled",
+          "title": "Cancelled",
+          "kind": "state",
+          "x": 830,
+          "y": 180,
+          "details": "Owner cancelled the reservation."
+        },
+        {
+          "id": "unavailable",
+          "title": "Unavailable",
+          "kind": "state",
+          "x": 440,
+          "y": 440,
+          "details": "The requested time could not be reserved."
+        }
+      ],
+      "edges": [
+        {
+          "from": "pending",
+          "to": "confirmed",
+          "label": "Accept"
+        },
+        {
+          "from": "confirmed",
+          "to": "cancelled",
+          "label": "Cancel"
+        },
+        {
+          "from": "pending",
+          "to": "unavailable",
+          "label": "Availability conflict"
+        }
+      ]
+    }
+  ]
+}

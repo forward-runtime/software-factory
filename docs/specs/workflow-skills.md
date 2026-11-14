@@ -21,7 +21,7 @@ verify and explain the result. Use the factory itself to deliver and maintain th
 ## Installation contract
 
 Vendor the portable skills, role prompts and their supporting references under `.software-factory/`.
-Link the six skills into native discovery directories and add a bounded managed instruction block
+Link the skills into native discovery directories and add a bounded managed instruction block
 to the target's `AGENTS.md` and `CLAUDE.md`. The block routes through the factory contract and
 starts onboarding when a profile is missing. Existing local rules and skills remain intact.
 Use `node scripts/install.mjs /absolute/target-repo` from a pinned source checkout. Discovery

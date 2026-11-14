@@ -9,7 +9,10 @@
 - Use one writer per file tree and isolated builder workspaces. Reviewers are read-only.
 - Verify actual outcomes and control registration. Never invent approvals, passes, running workers,
   integrations, timers or release. A goal is not a schedule or extra authority.
-- Use desktop HTML/Lavish views for interviews and understanding. They do not replace the spec;
+- Keep artifacts clean: no decorative subtitles, eyebrow headings, obvious-control legends or
+  metadata footnotes. Use the [clean artifact rule](HTML-ARTIFACTS.md#clean-artifacts).
+- Lead alignment and understanding with clickable system maps, flows or state diagrams through
+  `factory-visualize`; keep Markdown alongside them. Use desktop HTML/Lavish views. They do not replace the spec;
   see [HTML-ARTIFACTS.md](HTML-ARTIFACTS.md). Keep handoffs/history in the work record or PR.
 
 Follow [document review](DOCUMENT-REVIEW.md) when creating or editing prose: retain canonical
@@ -19,7 +22,8 @@ Markdown plus a matching HTML companion, with changed text highlighted inline in
 
 Onboard learns and installs the local process; plan establishes intent/stakes and reconciles
 changes; deliver builds; verify checks and routes failures; understand explains and checks human
-understanding; observe inspects and nudges owned work. Load only the relevant skill/reference.
+understanding; observe inspects and nudges owned work; visualize supplies spatial maps and
+behavioral diagrams for alignment and understanding. Load only the relevant skill/reference.
 Codex discovers `.agents/skills`; Claude Code discovers `.claude/skills`. In an installed repository,
 these entry points load canonical skills under `.software-factory/.agents/skills`. Resolve supporting
 links relative to the canonical file, not the discovery wrapper. Verify discovery in the session.

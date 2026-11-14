@@ -47,7 +47,7 @@ Full instructions, including the prompt to hand your agent: **[INSTALL.md](INSTA
 
 ### What installation does, and refuses to do
 
-- Vendors the portable contract, six skills, four role prompts and their references under
+- Vendors the portable contract, seven skills, four role prompts and their references under
   `.software-factory/`, reading allowlisted blobs from a pinned Git revision rather than copying
   directories — so nothing private rides along.
 - **Preserves your existing instructions.** It will not overwrite your `AGENTS.md`, `CLAUDE.md` or
@@ -58,7 +58,7 @@ Full instructions, including the prompt to hand your agent: **[INSTALL.md](INSTA
 - Grants no authority. Installing does not give agents permission to spend money, connect services,
   merge, or release.
 
-## The six skills
+## The seven skills
 
 | Skill | What it does |
 |---|---|
@@ -68,6 +68,7 @@ Full instructions, including the prompt to hand your agent: **[INSTALL.md](INSTA
 | `factory-verify` | Runs checks and independent review; routes defects back rather than papering over them |
 | `factory-understand` | Explains the actual change, then checks that you understand it |
 | `factory-observe` | Inspects owned work on a schedule and nudges only what it is authorized to |
+| `factory-visualize` | Draws clickable system maps, flows and state diagrams for alignment and understanding |
 
 Codex discovers `.agents/skills/`; Claude Code discovers `.claude/skills`. In an installed
 repository both entry points load the canonical copy under `.software-factory/`. Verify discovery in

@@ -1,12 +1,40 @@
 # Interactive intent and understanding artifacts
 
-Use desktop HTML/Lavish when a view helps someone explore intent or understand a result.
+Start alignment and understanding visually. Use `factory-visualize` for clickable system maps,
+container/component drill-down, flows and state diagrams in desktop HTML/Lavish or the team’s
+existing visual tool. Put supporting Markdown alongside the visual; do not lead with a prose dump.
 The canonical feature spec and learned process profile remain authoritative. Use the project's
 existing preview, work record and context index; no particular document or ticket service is required.
 
 Keep the primary view brief: the behavior or decision and one useful interaction. Put supporting
 evidence and code detail behind expansion when it distracts. State each limitation once; remove
 repeated status labels and process text that do not help the person judge the outcome.
+
+## Clean artifacts
+
+Never add decorative eyebrow headings, generic subtitles, tiny explanatory legends, obvious-control
+instructions, repeated status labels, or boilerplate disclaimers to factory artifacts. Start with
+a clear title and the requested content. Add text only when it helps the reader understand the
+subject, make a decision, or use a non-obvious interaction. Do not fill empty space with copy.
+
+Keep revision IDs, timestamps, source hashes, rendering notes and highlight-baseline information
+in HTML metadata or the work record, not in visible headers, subtitles or footers. Keep necessary
+source links, diagram labels, units, evidence and consequential limitations with the content they
+explain; this rule does not remove meaningful information. Ordinary navigation needs no tutorial.
+Apply this to documents, diagrams, specifications, interviews, explanations, slides and previews.
+Before sharing, remove every line that merely describes the artifact or repeats what is obvious.
+
+## Spatial exploration
+
+Give components stable identities and bounded groups; label interfaces and directional connections.
+Start at the system boundary and reveal meaningful levels on demand. Use flow charts for behavior
+and state diagrams for lifecycle. Let the giver select, inspect and, where useful, drag components,
+pan, zoom and return to the overview. Preserve the spatial map while inspecting details. Layout
+changes do not edit requirements or prove agreement; reconcile semantic edits through the spec.
+Use only diagram levels that help the actual question, and retain source/evidence links.
+
+A shared Conductor preview URL has one owner. Request a path from the server owner; never repoint
+the workspace port to publish an additional artifact. Check existing routes remain available.
 
 ## Intent view
 

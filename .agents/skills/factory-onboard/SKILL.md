@@ -17,7 +17,11 @@ Use [project enablement](../../../docs/ENABLEMENT.md) for repository instruction
 Linear and staged CI/CD integration. Preserve working automation and map existing conventions;
 installation alone does not authorize external setup or releases.
 
-Lead a short interview. Reuse known answers; ask one to three consequential questions per round:
+Begin the collaboration with `factory-visualize`: show a small provisional map from known
+facts, including the team/workflow if no product exists yet. Use it to explore missing process
+and boundaries; do not wait for a long prose specification or invent an agreed product.
+
+Lead a short interview around that map. Reuse known answers; ask one to three consequential questions per round:
 
 - What outcome does this project serve, and what does successful delivery mean to its people?
 - How does work arrive, who decides, who accepts the result, and what should the factory own?
@@ -42,7 +46,9 @@ Use concrete examples to resolve ambiguities rather than presenting a generic qu
 Explain what each answer changes. Recommend a process and invite correction. Getting aligned
 is the receiving factory's responsibility; the giver confirms or corrects its interpretation.
 
-Produce one desktop HTML onboarding agreement, using Lavish when available. Show what was
+Use `factory-visualize` to begin with a clickable map of the team, system boundaries and
+proposed workflow. Keep supporting Markdown alongside it. Produce one desktop HTML onboarding
+agreement, using Lavish when available. Show what was
 learned, the proposed operating process, decision rights, rigor, evidence and unresolved choices.
 Include a preview of the resulting project profile and the files/components selected for installation.
 Bind actual feedback to the artifact version; an unsent choice or an opened page is not agreement.

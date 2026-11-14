@@ -7,6 +7,10 @@ Read target instructions and the learned project profile; use `factory-onboard` 
 is unknown. The receiving factory owns getting aligned. Read previous answers and relevant
 sources before asking; keep this project's domain knowledge out of the reusable core.
 
+Begin with `factory-visualize`: put the known actors, system boundary, flow or states on a
+small provisional map and use it to align. Keep assumptions visible in the relevant details;
+do not wait until a long prose specification has been written.
+
 ## Establish intent and stakes
 
 1. Reflect the outcome, people served, existing behavior and boundaries. Separate the giver's
@@ -20,7 +24,8 @@ sources before asking; keep this project's domain knowledge out of the reusable 
 4. Maintain one feature spec at the project's existing location. Include outcome, stakes,
    scope, acceptance examples, decision authority and unresolved intent. Add criterion identifiers
    where tasks/checks need references; avoid empty template fields.
-5. Use a small desktop HTML/Lavish view to explore interpretations or tradeoffs when helpful.
+5. Start alignment with `factory-visualize`: a clickable context/component map, flow or state
+   view that lets the giver explore interpretations and tradeoffs. Keep Markdown alongside it.
    It is a view of the spec, not another spec. Confirm behavior with the giver or cite the
    mandate that settles it. Save actual decisions with their source and scope.
 
